@@ -99,7 +99,74 @@ var host="" ;
 
 if(location.host !='')
 	host  = location.host+"/"
- host="http://raw.githubusercontent.com/geogeek11/geogeek11.github.io/master/" ; 
+ host="https://raw.githubusercontent.com/geogeek11/geogeek11.github.io/master/" ; 
+ 
+ 
+ $.ajax({
+  dataType: 'jsonp',
+ // data: 'id=10',
+ // jsonp: 'jsonp_callback',
+  url: host+ "geojson/"+country.toUpperCase()+".json",
+  success: function(data) {
+	console.log(host+"geojson/"+country+".json") ; 
+	features=[] ; 
+	//When GeoJSON is loaded
+	var geojsonLayer = new L.GeoJSON(data , {style: style , onEachFeature: function (feature, layer) {
+         
+    layer.on({
+        mouseover: highlightFeature,
+        mouseout: resetHighlight ,
+		dblclick : reverse_geocoding ,
+		click : zoomToFeature
+    });
+
+
+
+		if(typeof state_center_x === 'undefined' ||  state_center_x == null) {
+		console.log(feature.name)
+		state_center_x =  feature.x;
+		state_center_y =  feature.y;
+		//killed = feature.causalities ; 
+		setTimeout(function(){
+    odometer1.innerHTML = feature.causalities;
+							}, 0);
+		setTimeout(function(){
+    odometer2.innerHTML = feature.refugies;
+							}, 0);	
+
+	country2.innerHTML=feature.real_name ; 
+		//legend.update(feature.causalities)
+		}
+		else
+		{
+		
+		var pointA = new L.LatLng(state_center_y, state_center_x);
+var pointB = new L.LatLng(feature.y, feature.x);
+var pointList = [pointA, pointB];
+
+var firstpolyline = new L.Polyline(pointList, {
+color: 'red',
+weight: 2,
+opacity: 0.3,
+smoothFactor: 0.5 
+
+});
+firstpolyline.addTo(map);
+		
+		
+
+}
+
+var lbl ; 
+lbl =feature.name ; 
+     }
+	 });		//New GeoJSON layer
+	 geojsonLayer.addTo(map);
+	//map.addLayer(geojsonLayer);			//Add layer to map	
+state_center_x = null ; 
+}
+});
+ /*
 $.getJSON( host+ "geojson/"+country.toUpperCase()+".json", function(data) {
 	console.log(host+"geojson/"+country+".json") ; 
 	features=[] ; 
@@ -157,7 +224,7 @@ lbl =feature.name ;
 	 geojsonLayer.addTo(map);
 	//map.addLayer(geojsonLayer);			//Add layer to map	
 state_center_x = null ; 
-});
+}); */
 }
 
 var info = L.control({position: 'topright'});
