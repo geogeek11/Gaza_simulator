@@ -99,7 +99,7 @@ var host="" ;
 
 if(location.host !='')
 	host  = location.host+"/"
- 
+ host="http://raw.githubusercontent.com/geogeek11/geogeek11.github.io/master/" ; 
 $.getJSON( host+ "geojson/"+country+".json", function(data) {
 	console.log(host+"geojson/"+country+".json") ; 
 	features=[] ; 
