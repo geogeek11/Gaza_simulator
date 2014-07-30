@@ -83,10 +83,14 @@ var state_center_y;
   else if(typeof   layer.options.opacity === 'undefined' || layer.options.opacity !=1)
   map.removeLayer(  layer);
 });
+
+var host="" ; 
+
+if(location.host !='')
+	host  = location.host+"/"
  
- 
-$.getJSON("http://metrogeo.allalla.com/geojson/"+country+".json", function(data) {
-	
+$.getJSON( host+ "geojson/"+country+".json", function(data) {
+	console.log(host+"geojson/"+country+".json") ; 
 	features=[] ; 
 	//When GeoJSON is loaded
 	var geojsonLayer = new L.GeoJSON(data , {style: style , onEachFeature: function (feature, layer) {
