@@ -1,6 +1,17 @@
 ﻿function getColor(d) {
 //var ar=['#FFFFB2','#FECC5C','#FD8D3C' ,'#E31A1C' ];
-var ar=['#EF3753','#0237B7','#8C96C6' ,'#88419D' ];
+var ar=['#EF0000','#A0CFEC','#FFFFFF' ,'#88419D' ];
+if (d== 'Gaza') 
+    return ar[0];
+else if (d== 'Israel') 
+    return ar[1];
+else 
+	return ar[2];
+}
+
+function getalpha(d) {
+//var ar=['#FFFFB2','#FECC5C','#FD8D3C' ,'#E31A1C' ];
+var ar=[0.8,0.5,0 ,'#88419D' ];
 if (d== 'Gaza') 
     return ar[0];
 else if (d== 'Israel') 
@@ -44,7 +55,7 @@ function style(feature) {
         opacity: 1,
         color: 'white',
         //dashArray: '1',
-        fillOpacity: 0.3
+        fillOpacity:getalpha(feature.name)
     };
 }
 
