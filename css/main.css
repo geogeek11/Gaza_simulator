@@ -25,7 +25,7 @@ margin: 0px;
     position: relative;
     width: 700px;
     color:#EF3753;
-    z-index: 1000;
+    z-index: 7;
     padding:20px;
 
 
@@ -36,7 +36,11 @@ margin: 0px;
   line-height:36px;
 
 }
-
+#loading{
+ position: absolute;
+top:50%;
+right : 50% ; 
+}
 #Victimes{
 display: block;
 
@@ -51,7 +55,7 @@ margin: 0px;
     position: relative;
     width: 800px;
     color:#EF3753;
-    z-index: 1000;
+    z-index: 7;
     padding:20px;
 	
 	
@@ -116,6 +120,7 @@ z-index: 2;
     font: 14px/16px Arial,Helvetica,sans-serif;
     padding: 6px 8px;
 	clear:both;
+	 margin-top: 90px !important;
 }
 .info h4 {
     color: #777777;
@@ -174,4 +179,14 @@ label:before {
     pointer-events:none;
     display:block;
    
+}
+
+#buttons{
+	position:absolute;
+	top:3%;
+	left:65%;
+	width:460px ; 
+}
+#button-faq{
+margin-bottom: -15px;
 }

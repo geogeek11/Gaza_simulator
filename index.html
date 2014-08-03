@@ -9,6 +9,9 @@
 <link rel="stylesheet" type="text/css" href="css/odometer-theme-default	.css" />
 <link rel="stylesheet" type="text/css" href="css/leaflet.label.css" />
  <link rel="stylesheet" type="text/css" href="css/main.css" />
+ <link rel="stylesheet" type="text/css" href="css/overlay.css" /> 
+
+
 </head>
 <body>
 
@@ -19,14 +22,51 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
   <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
  
-  
-      <script src="script/odometer.min.js"></script>
+ <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+     <script src="script/overlay.min.js"></script> 
+   <script src="script/odometer.min.js"></script>
     
-<div id ="Victimes"><div id ="country">What if <span id ="country2">your country</span> has been occupied by Israel ?</div>  <div class = "vr" > <div id="odometer1" class="odometer">000</div> Victimes</div> <div class = "vr" >   <div id="odometer2" class="odometer">000</div> Refugees </div>  </div>
+<div id ="Victimes"><div id ="country">What if <span id ="country2">your country</span> were Palestine ?</div>  <div class = "vr" > <div id="odometer1" class="odometer">000</div> Victimes</div> <div class = "vr" >   <div id="odometer2" class="odometer">000</div> Refugees </div>  </div>
+<div id="loading"><img src = "script/loading.gif"></div>
+
+<span class='st_facebook_hcount' displayText='Facebook'></span>
+<span class='st_twitter_hcount' displayText='Tweet'></span>
+<span class='st_googleplus_hcount' displayText='Google +'></span>
+<span class='st_linkedin_hcount' displayText='LinkedIn'></span>
+<div id="buttons">
+<a data-overlay-trigger href="#!">
+<img id = "button-faq" src = "script/question.png">
+</a>
+</div>
+
+
+<div class="overlay">
+  <div class="modal">
+    <h1>About</h1>
+    <p>The goal of this visualization is to view the palestinian disaster from its own perspective. Also to know more about Palestinian diaspora. And the human impact of the israeli-arab conflict.<br> <br> 
+The number of victims and refugees are based on recent census and predictions. The ratios used are as below:<br> 
+- population inside Gaza presents 14% of the total population. 44% among them are refugees.<br> 
+- population inside Israel presents 35%  of the total population of palestinians.<br> 
+- 73% of population are refugees.<br> 
+- 48% of population are refugees in neighbour countries.<br> 
+- 3% of population are refugees in other countries.<br> 
+- 0.036% of population are victims.<br> 
+- Gaza the area out of control of israeli occupation presents 1% of the area of Palestine ( before 1948 ).<br> <br> 
+
+<h4>References : </h4><a target="_blank"  href="http://www.france-palestine.org/PCBS-La-population-palestinienne-s">Refugees Data</a> , <a target="_blank"  href="http://en.wikipedia.org/wiki/Israeli%E2%80%93Palestinian_conflict">Victimes Data</a>
+<br>
+<br><br>
+<a target="_blank"  href="https://github.com/geogeek11/Gaza_simulator">Contribute or fork in github</a> 
+
+
+</p>
+  </div>
+</div>
 
 </body>
 
 <script type="text/javascript" src="script/script.js"></script>
-
+<script type="text/javascript">stLight.options({publisher: "d69ea02f-d952-43d6-9dd5-8c3784100b6b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+ 
 
 </html>
