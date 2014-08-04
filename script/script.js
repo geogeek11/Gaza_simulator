@@ -17,6 +17,7 @@ function getalpha(d) {
 	else 
 		return ar[2];
 }
+
 function get_lbl(feature){
 
 
@@ -32,8 +33,6 @@ function get_lbl(feature){
 
 function highlightFeature(e) {
 	var layer = e.target;
-	
-	
 	get_lbl(layer.feature);
 }
 
@@ -251,4 +250,10 @@ load_json(response.address.country_code) ;
 });
 
 
+}
+
+
+function OpenInNewTab(url) {
+  var win = window.open(url, '_blank');
+  win.focus();
 }

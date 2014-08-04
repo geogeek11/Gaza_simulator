@@ -14,6 +14,17 @@ margin : 10px ;
   width: 350px;
 
 }
+.contact {
+ 
+  float:left ;  
+}
+.contact img{
+ 
+    margin-left : 35px;
+	 margin-right : 35px;
+	 
+}
+
 #country{
 
 margin: 0px;
